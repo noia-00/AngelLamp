@@ -26,8 +26,12 @@
           <% elsif request.path.include?("sign_up") || request.path.include?("sign_in") %>
           <% else %>
             <div class="nav__right">
-              <%= link_to "ログイン", root_path, class: :nav__btn %>
-              <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+              <a class="nav__btn" href="#">
+                <%= fa_icon("sign-in lg", text:"ログイン") %>
+              </a>
+              <a class="nav__btn" href="/users/sign_up">
+                <%= fa_icon("user-plus", text:"新規登録") %>
+              </a>
             </div>
           <% end %>
           <%# // ログインしているときは上記を表示するようにしましょう %>
