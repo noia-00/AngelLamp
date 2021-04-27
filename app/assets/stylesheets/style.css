@@ -82,6 +82,105 @@ a {
   opacity: 0.5;
 }
 
+.profile_icon{
+  width: 45px;
+  width: 45px;
+}
+
+.user-nickname{
+  color: #747474;
+  margin: 0 10px;
+}
+
+.angle-down{
+  color: #747474;
+}
+
+
+
+.js-dropdown{
+  display: flex;
+  align-items: center;
+}
+
+.header_right {
+  margin-left: 8em;
+}
+
+.header_right .menu_list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header_right .menu_list .nav_item {
+  position: relative;
+}
+
+.header_right .menu_list .nav_item .panel {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fde2ea;
+  width: 100%;
+  display: none;
+  z-index: 2;
+}
+
+.header_right .menu_list .nav_item .panel .panel_item {
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.header_right .menu_list .nav_item .panel .panel_item a {
+  color: #747474;
+}
+
+.header_right .menu_list .nav_item {
+  display: block;
+  width: 150px;
+  text-align: center;
+}
+
+.header_right .menu_list .nav_item a {
+  color: #fff;
+}
+
+.panel-inner{
+  margin: 10px 0;
+}
+
+.panel_item{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  text-decoration: none;
+  user-select: none;
+  color: #747474;
+  border: 1px #747474 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+.panel_item:hover{
+  background: #ffa3b8;
+  color: #fff;
+}
+
+.panel_title{
+  color: #747474;
+}
+
+.panel_title:hover{
+  color: #fff;
+}
+
+
+
+
+
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
@@ -149,7 +248,8 @@ a {
   background: radial-gradient(#F2B9A1, #f08098) fixed;
   height: 90vh;
   width: auto;
-  position:relative 
+  position:relative;
+  z-index: 1;
 }
 
 .topimg1{

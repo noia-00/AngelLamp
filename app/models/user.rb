@@ -15,4 +15,7 @@ class User < ApplicationRecord
   with_options numericality: { other_than: 1 } do
     validates :prefecture_id
   end
+
+  validates :office_code, format: { with: /\A\d{0}|\d{10}\z/ }
+
 end

@@ -5,8 +5,8 @@
     <title>AngelLamp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
   </head>
 
@@ -17,11 +17,36 @@
           <div class="nav__left">
             <%= link_to image_tag("logo.png", class: :logo), root_path %>
           </div>
-          <%# ログインしているときは以下を表示するようにしましょう %>
+
           <% if user_signed_in? %>
-            <div class="nav__right">
-              <%# <%= link_to "ログアウト", root_path, class: :nav__logout %>
-              <%# <%= link_to "New Proto", root_path, class: :nav__btn %>
+            <div class="header_right">
+              <ul class="menu_list">
+                <li class="nav_item">
+                  <a href="#" class="js-dropdown">
+                    <%= image_tag "profile_icon.png", class:"profile_icon" %>
+                    <div class="user-nickname">
+                      <%= current_user.nickname %>
+                    </div>
+                    <div class="angle-down">
+                      <%= fa_icon("angle-down") %>
+                    </div>
+                  </a>
+                  <div class="panel js-dropdown-menu">
+                    <ul class="panel-inner">
+                      <%= link_to "#" do %>
+                        <li class="panel_item">
+                          マイページ
+                        </li>
+                      <% end %>
+                      <%= link_to destroy_user_session_path, method: :delete do %>
+                        <li class="panel_item">
+                          ログアウト
+                        </li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
             </div>
           <% elsif request.path.include?("sign_up") || request.path.include?("sign_in") %>
           <% else %>
@@ -34,10 +59,6 @@
               </a>
             </div>
           <% end %>
-          <%# // ログインしているときは上記を表示するようにしましょう %>
-          <%# ログインしていないときは以下を表示するようにしましょう %>
-
-          <%# // ログインしていないときは上記を表示するようにしましょう %>
         </div>
       </div>
     </header>
