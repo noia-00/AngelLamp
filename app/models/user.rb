@@ -17,5 +17,4 @@ class User < ApplicationRecord
   end
 
   validates :office_code, format: { with: /\A\d{0}|\d{10}\z/ }
-
 end
