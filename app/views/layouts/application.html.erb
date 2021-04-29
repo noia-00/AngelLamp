@@ -19,7 +19,19 @@
           </div>
 
           <% if user_signed_in? %>
-            <div class="header_right">
+            
+            <nav class="gnav">
+              <div class="gnav__inner">
+                <ul class='gnav-lists'>
+                  <li class='gnav-list'><a class='list-letter' href="#"><span>悩み相談</span></a></li>
+                  <li class='gnav-list'><a class='list-letter' href="#"><span>プロへの質問</span></a></li>
+                  <li class='gnav-list'><a class='list-letter' href="#"><span>コラム</span></a></li>
+                  <li class='gnav-list'><a class='list-letter' href="#"><span>施設検索</span></a></li>
+                </ul>
+              </div>
+            </nav>
+
+            <div class="nav__right">
               <ul class="menu_list">
                 <li class="nav_item">
                   <a href="#" class="js-dropdown">
@@ -33,16 +45,8 @@
                   </a>
                   <div class="panel js-dropdown-menu">
                     <ul class="panel-inner">
-                      <%= link_to "#" do %>
-                        <li class="panel_item">
-                          マイページ
-                        </li>
-                      <% end %>
-                      <%= link_to destroy_user_session_path, method: :delete do %>
-                        <li class="panel_item">
-                          ログアウト
-                        </li>
-                      <% end %>
+                      <%= link_to "#" do %><li class="panel_item">マイページ</li><% end %>
+                      <%= link_to destroy_user_session_path, method: :delete do %><li class="panel_item">ログアウト</li><% end %>
                     </ul>
                   </div>
                 </li>
@@ -50,10 +54,22 @@
             </div>
           <% elsif request.path.include?("sign_up") || request.path.include?("sign_in") %>
           <% else %>
+            <nav class="gnav">
+              <div class="gnav__inner">
+                <ul class='gnav-lists'>
+                  <%= link_to "#" do %><li class='gnav-list'><a class='list-letter'><span>悩み相談</span></a></li><% end %>
+                  <%= link_to "#" do %><li class='gnav-list'><a class='list-letter'><span>プロへの質問</span></a></li><% end %>
+                  <%= link_to "#" do %><li class='gnav-list'><a class='list-letter'><span>コラム</span></a></li><% end %>
+                  <%= link_to "#" do %><li class='gnav-list'><a class='list-letter'><span>施設検索</span></a></li><% end %>
+                </ul>
+              </div>
+            </nav>
             <div class="nav__right">
-              <a class="nav__btn" href="#">
-                <%= fa_icon("sign-in lg", text:"ログイン") %>
-              </a>
+              <%= link_to new_user_session_path do %>
+                <div class="nav__btn">
+                  <%= fa_icon("sign-in lg", text:"ログイン") %>
+                </div>
+              <% end %>
               <a class="nav__btn" href="/users/sign_up">
                 <%= fa_icon("user-plus", text:"新規登録") %>
               </a>
@@ -63,9 +79,12 @@
       </div>
     </header>
 
-
-
     <%= yield %>
+
+    <div class="page_top">
+      <a class="fa fa-angle-double-up fa-4x" href="#"></a>
+    </div>
+
     <footer class="footer">
       <p class="copyright">Copyright © Angel Lamp All rights reserved.</p>
     </footer>
