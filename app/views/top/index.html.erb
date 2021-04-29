@@ -6,8 +6,306 @@
         <%# <%= link_to "ユーザー名さん", root_path, class: :greeting__link%>
       <%# </div> %>
     <%# // ログインしているときは上記を表示する %>
-    <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+  </div>
+  <div class="topbox">
+
+    <%= image_tag "1.png", class:"topimg1" %>
+    <%= image_tag "2.png", class:"topimg2" %>
+    <%= image_tag "3.png", class:"topimg3" %>
+    <%= image_tag "4.png", class:"topimg4" %>
+    <%= image_tag "5.png", class:"topimg5" %>
+    <%= image_tag "6.png", class:"topimg6" %>
+    <%= image_tag "7.png", class:"topimg7" %>
+        
+    <div class="topinner">
+      <p class="toptytle">在宅介護を支え合おう</p>
+      <p class="topmessage1">「何から取り掛かればいい？」「こういう時どうすれば・・・」
+        <br>在宅介護は”孤独との戦い”とよく言われます
+        <br>ですが、たとえあなたの身の回りにいなくとも
+        <br>今日もどこかであなたと同じように頑張っている人がいるのです
+      </p>
+      <p class="topmessage2">”孤独”であっても、”一人”じゃない</p>
+      <p class="topmessage3">在宅介護を支え合う活動を、あなたも始めてみませんか？</p>
     </div>
   </div>
+
+    <%# 特徴紹介部分 %>
+  <div class='select-reason-contents'>
+    <h2 class='select-reason-contents-title'>
+      AngelLampの特徴
+    </h2>
+    <div class='select-reason-contents-border'>
+      <div class='select-reason-contents-inner'>
+        <ul class='reason-lists'>
+          <li class='list'>
+            <div class="reason-title">
+              <span class='reason-list-number'>1</span>
+              <h3 class='reason-list-text'>
+                <span class='reason-list-blue-text'>特化</span>
+                したWEBサービス
+              </h3>
+            </div>
+            <div class="reason-inner">
+              <%= image_tag "8.png", class:"list-pict" %>
+              <p class='reason-list-description'>
+                ”在宅介護者”の方に特化したサービスを提供しております。
+              </p>
+            </div>
+          </li>
+          <li class='list'>
+            <div class="reason-title">
+              <span class='reason-list-number'>2</span>
+              <h3 class='reason-list-text'>
+                <span class='reason-list-blue-text'>シンプル</span>
+                で使いやすい
+              </h3>
+            </div>
+            <div class="reason-inner">
+              <%= image_tag "9.png", class:"list-pict" %>
+              <p class='reason-list-description'>
+                余計な入力など無しに、最低限の操作で質問や情報発信をすることが可能です。
+              </p>
+            </div>
+          </li>
+          <li class='list'>
+            <div class="reason-title">
+              <span class='reason-list-number'>3</span>
+              <h3 class='reason-list-text'>
+                利用料
+                <span class='reason-list-blue-text'>無料</span>
+              </h3>
+            </div>
+            <div class="reason-inner">
+              <%= image_tag "10.png", class:"list-pict" %>
+              <p class='reason-list-description'>
+                登録後は全ての機能を無料でご利用いただけます。
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <%# /特徴紹介部分 %>
+
+  <%# 新着投稿部分 %>
+  <div class='new-posts'>
+    <h3 class='new-posts-title'>
+      新着投稿
+    </h3>
+    <div class='new-posts-inner'>
+      <%# 投稿内容部分 %>
+      <ul class='post-lists'>
+        <span class="arrow left"><%= fa_icon("angle-left 2x") %></span>
+        <div class="post-lists-border">
+          <li class='list'>
+            <div class="post-title">【知らなきゃ損！】家族介護慰労金</div>
+            <div class="category-tag">コラム</div>
+            <div class="post-body">
+              <div class="post-left">
+                <div class="post-inner">
+                  <%= image_tag "profile_icon.png", class:"post-profile-icon" %>
+                  <div class="postdescription">
+                    <div class='post-description-text'>ユーザー名</div>
+                    <div class='post-description-text'>2021/04/01</div>
+                  </div>
+                </div>
+              </div>
+              <div class="post-right">
+                <div class='post-text'>「家族介護慰労金」というものをご存知でしょうか？介護保険サービスを利用せず、自宅で1年以上...</div>
+              </div>
+            </div>
+          </li>
+        </div>
+        <div class="post-lists-border">
+          <li class='list'>
+            <div class="post-title">【知らなきゃ損！】家族介護慰労金</div>
+            <div class="category-tag">プロへの質問</div>
+            <div class="post-body">
+              <div class="post-left">
+                <div class="post-inner">
+                  <%= image_tag "profile_icon.png", class:"post-profile-icon" %>
+                  <div class="postdescription">
+                    <div class='post-description-text'>ユーザー名</div>
+                    <div class='post-description-text'>2021/04/01</div>
+                  </div>
+                </div>
+              </div>
+              <div class="post-right">
+                <div class='post-text'>「家族介護慰労金」というものをご存知でしょうか？介護保険サービスを利用せず、自宅で1年以上...</div>
+              </div>
+            </div>
+          </li>
+        </div>
+        <div class="post-lists-border">
+          <li class='list'>
+            <div class="post-title">【知らなきゃ損！】家族介護慰労金</div>
+            <div class="category-tag">プロへの質問</div>
+            <div class="post-body">
+              <div class="post-left">
+                <div class="post-inner">
+                  <%= image_tag "profile_icon.png", class:"post-profile-icon" %>
+                  <div class="postdescription">
+                    <div class='post-description-text'>ユーザー名</div>
+                    <div class='post-description-text'>2021/04/01</div>
+                  </div>
+                </div>
+              </div>
+              <div class="post-right">
+                <div class='post-text'>「家族介護慰労金」というものをご存知でしょうか？介護保険サービスを利用せず、自宅で1年以上...</div>
+              </div>
+            </div>
+          </li>
+        </div>
+        <div class="post-lists-border">
+          <li class='list'>
+            <div class="post-title">せん妄と認知症の違いについて</div>
+            <div class="category-tag">プロへの質問</div>
+            <div class="post-body">
+              <div class="post-left">
+                <div class="post-inner">
+                  <%= image_tag "profile_icon.png", class:"post-profile-icon" %>
+                  <div class="postdescription">
+                    <div class='post-description-text'>ユーザー名</div>
+                    <div class='post-description-text'>2021/04/01</div>
+                  </div>
+                </div>
+              </div>
+              <div class="post-right">
+                <div class='post-text'>「家族介護慰労金」というものをご存知でしょうか？介護保険サービスを利用せず、自宅で1年以上...</div>
+              </div>
+            </div>
+          </li>
+        </div>
+        <div class="post-lists-border">
+          <li class='list'>
+            <div class="post-title">【知らなきゃ損！】家族介護慰労金</div>
+            <div class="category-tag">プロへの質問</div>
+            <div class="post-body">
+              <div class="post-left">
+                <div class="post-inner">
+                  <%= image_tag "profile_icon.png", class:"post-profile-icon" %>
+                  <div class="postdescription">
+                    <div class='post-description-text'>ユーザー名</div>
+                    <div class='post-description-text'>2021/04/01</div>
+                  </div>
+                </div>
+              </div>
+              <div class="post-right">
+                <div class='post-text'>「家族介護慰労金」というものをご存知でしょうか？介護保険サービスを利用せず、自宅で1年以上...</div>
+              </div>
+            </div>
+          </li>
+        </div>
+        <div class="post-lists-border">
+          <li class='list'>
+            <div class="post-title">【知らなきゃ損！】家族介護慰労金</div>
+            <div class="category-tag">プロへの質問</div>
+            <div class="post-body">
+              <div class="post-left">
+                <div class="post-inner">
+                  <%= image_tag "profile_icon.png", class:"post-profile-icon" %>
+                  <div class="postdescription">
+                    <div class='post-description-text'>ユーザー名</div>
+                    <div class='post-description-text'>2021/04/01</div>
+                  </div>
+                </div>
+              </div>
+              <div class="post-right">
+                <div class='post-text'>「家族介護慰労金」というものをご存知でしょうか？介護保険サービスを利用せず、自宅で1年以上...</div>
+              </div>
+            </div>
+          </li>
+        </div>
+        <div class="post-lists-border">
+          <li class='list'>
+            <div class="post-title">【知らなきゃ損！】家族介護慰労金</div>
+            <div class="category-tag">プロへの質問</div>
+            <div class="post-body">
+              <div class="post-left">
+                <div class="post-inner">
+                  <%= image_tag "profile_icon.png", class:"post-profile-icon" %>
+                  <div class="postdescription">
+                    <div class='post-description-text'>ユーザー名</div>
+                    <div class='post-description-text'>2021/04/01</div>
+                  </div>
+                </div>
+              </div>
+              <div class="post-right">
+                <div class='post-text'>「家族介護慰労金」というものをご存知でしょうか？介護保険サービスを利用せず、自宅で1年以上...</div>
+              </div>
+            </div>
+          </li>
+        </div>
+        <div class="post-lists-border">
+          <li class='list'>
+            <div class="post-title">【知らなきゃ損！】家族介護慰労金</div>
+            <div class="category-tag">プロへの質問</div>
+            <div class="post-body">
+              <div class="post-left">
+                <div class="post-inner">
+                  <%= image_tag "profile_icon.png", class:"post-profile-icon" %>
+                  <div class="postdescription">
+                    <div class='post-description-text'>ユーザー名</div>
+                    <div class='post-description-text'>2021/04/01</div>
+                  </div>
+                </div>
+              </div>
+              <div class="post-right">
+                <div class='post-text'>「家族介護慰労金」というものをご存知でしょうか？介護保険サービスを利用せず、自宅で1年以上...</div>
+              </div>
+            </div>
+          </li>
+        </div>
+        <span class="arrow right"><%= fa_icon("angle-right 2x") %></span>
+      </ul>
+      <%# /投稿内容部分 %>
+    </div>
+  </div>
+  <%# 新着投稿部分 %>
+  <div class="news-head">
+    <h4 class='news-title'>
+      ニュース
+    </h4>
+    <div class="news-all">
+      <%= link_to "#" do %><li class='news-all-text'><%= fa_icon("caret-square-o-right", text:"一覧はこちら") %></li><% end %>
+    </div>
+  </div>
+  <div class="news">
+    <dt>2020.01.06</dt>
+    <div class="news-inner">
+      <div class="news-category-tag">お知らせ</div>
+      <div class="news-discription">
+        <%= link_to "#" do %><li class='news-discription-text'>株式会社◯◯◯◯と資本提携しました。ここにテキストが入ります。</li><% end %>
+      </div>
+    </div>
+    <dt>2020.01.06</dt>
+    <div class="news-inner">
+      <div class="news-category-tag">お知らせ</div>
+      <div class="news-discription">
+        <%= link_to "#" do %><li class='news-discription-text'>株式会社◯◯◯◯と資本提携しました。ここにテキストが入ります。</li><% end %>
+      </div>
+    </div>
+    <dt>2020.01.06</dt>
+    <div class="news-inner">
+      <div class="news-category-tag">お知らせ</div>
+      <div class="news-discription">
+        <%= link_to "#" do %><li class='news-discription-text'>株式会社◯◯◯◯と資本提携しました。ここにテキストが入ります。</li><% end %>
+      </div>
+    </div>
+    <dt>2020.01.06</dt>
+    <div class="news-inner">
+      <div class="news-category-tag">お知らせ</div>
+      <div class="news-discription">
+        <%= link_to "#" do %><li class='news-discription-text'>株式会社◯◯◯◯と資本提携しました。ここにテキストが入ります。</li><% end %>
+      </div>
+    </div>
+  </div>
+
+  <%# スプラッシュ %>
+  <div class="start-logo">
+    <p class="start-logo-inner"><%= image_tag 'logo.png' %></p>
+  </div>
+</div>
+
 </main>

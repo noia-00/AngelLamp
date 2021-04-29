@@ -5,8 +5,8 @@
     <title>AngelLamp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
   </head>
 
@@ -17,45 +17,74 @@
           <div class="nav__left">
             <%= link_to image_tag("logo.png", class: :logo), root_path %>
           </div>
-          <%# ログインしているときは以下を表示するようにしましょう %>
-            <%# <div class="nav__right"> %>
-              <%# <%= link_to "ログアウト", root_path, class: :nav__logout %>
-              <%# <%= link_to "New Proto", root_path, class: :nav__btn %>
-            <%# </div> %>
-          <%# // ログインしているときは上記を表示するようにしましょう %>
-          <%# ログインしていないときは以下を表示するようにしましょう %>
+
+          <% if user_signed_in? %>
+            
+            <nav class="gnav">
+              <div class="gnav__inner">
+                <ul class='gnav-lists'>
+                  <li class='gnav-list'><a class='list-letter' href="#"><span>悩み相談</span></a></li>
+                  <li class='gnav-list'><a class='list-letter' href="#"><span>プロへの質問</span></a></li>
+                  <li class='gnav-list'><a class='list-letter' href="#"><span>コラム</span></a></li>
+                  <li class='gnav-list'><a class='list-letter' href="#"><span>施設検索</span></a></li>
+                </ul>
+              </div>
+            </nav>
+
             <div class="nav__right">
-              <%= link_to "ログイン", root_path, class: :nav__btn %>
-              <%= link_to "新規登録", root_path, class: :nav__btn %>
+              <ul class="menu_list">
+                <li class="nav_item">
+                  <a href="#" class="js-dropdown">
+                    <%= image_tag "profile_icon.png", class:"profile_icon" %>
+                    <div class="user-nickname">
+                      <%= current_user.nickname %>
+                    </div>
+                    <div class="angle-down">
+                      <%= fa_icon("angle-down") %>
+                    </div>
+                  </a>
+                  <div class="panel js-dropdown-menu">
+                    <ul class="panel-inner">
+                      <%= link_to "#" do %><li class="panel_item">マイページ</li><% end %>
+                      <%= link_to destroy_user_session_path, method: :delete do %><li class="panel_item">ログアウト</li><% end %>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
             </div>
-          <%# // ログインしていないときは上記を表示するようにしましょう %>
+          <% elsif request.path.include?("sign_up") || request.path.include?("sign_in") %>
+          <% else %>
+            <nav class="gnav">
+              <div class="gnav__inner">
+                <ul class='gnav-lists'>
+                  <%= link_to "#" do %><li class='gnav-list'><a class='list-letter'><span>悩み相談</span></a></li><% end %>
+                  <%= link_to "#" do %><li class='gnav-list'><a class='list-letter'><span>プロへの質問</span></a></li><% end %>
+                  <%= link_to "#" do %><li class='gnav-list'><a class='list-letter'><span>コラム</span></a></li><% end %>
+                  <%= link_to "#" do %><li class='gnav-list'><a class='list-letter'><span>施設検索</span></a></li><% end %>
+                </ul>
+              </div>
+            </nav>
+            <div class="nav__right">
+              <%= link_to new_user_session_path do %>
+                <div class="nav__btn">
+                  <%= fa_icon("sign-in lg", text:"ログイン") %>
+                </div>
+              <% end %>
+              <a class="nav__btn" href="/users/sign_up">
+                <%= fa_icon("user-plus", text:"新規登録") %>
+              </a>
+            </div>
+          <% end %>
         </div>
       </div>
     </header>
 
-    <div class="topbox">
+    <%= yield %>
 
-      <%= image_tag "1.png", class:"topimg1" %>
-      <%= image_tag "2.png", class:"topimg2" %>
-      <%= image_tag "3.png", class:"topimg3" %>
-      <%= image_tag "4.png", class:"topimg4" %>
-      <%= image_tag "5.png", class:"topimg5" %>
-      <%= image_tag "6.png", class:"topimg6" %>
-      <%= image_tag "7.png", class:"topimg7" %>
-        
-      <div class="topinner">
-        <p class="toptytle">在宅介護を支え合おう</p>
-        <p class="topmessage1">「何から取り掛かればいい？」「こういう時どうすれば・・・」
-          <br>在宅介護は”孤独との戦い”とよく言われます
-          <br>ですが、たとえあなたの身の回りにいなくとも
-          <br>今日もどこかであなたと同じように頑張っている人がいるのです
-        </p>
-        <p class="topmessage2">”孤独”であっても、”一人”じゃない</p>
-        <p class="topmessage3">在宅介護を支え合う活動を、あなたも始めてみませんか？</p>
-      </div>
+    <div class="page_top">
+      <a class="fa fa-angle-double-up fa-4x" href="#"></a>
     </div>
 
-    <%= yield %>
     <footer class="footer">
       <p class="copyright">Copyright © Angel Lamp All rights reserved.</p>
     </footer>
